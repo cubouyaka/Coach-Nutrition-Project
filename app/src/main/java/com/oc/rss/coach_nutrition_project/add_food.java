@@ -93,18 +93,15 @@ public class add_food extends AppCompatActivity {
     public boolean addRow(String name, int calorie){
         MySQLiteHelper helper = new MySQLiteHelper(this);
         SQLiteDatabase db = helper.getWritableDatabase();
-        //check if the entry is already in the DB        String[] columns = { MySQLiteHelper.NAME };
 
+        //check if the entry is already in the DB
         String[] columns = { MySQLiteHelper.NAME };
         String selection = MySQLiteHelper.NAME + " =?";
         String[] selectionArgs = { name };
         String limit = "1";
 
-        Cursor cursor = db.query(MySQLiteHelper.FOOD, columns, selection, selectionArgs, null, null, null, limit);
-
-        /*String Query = "Select * from " + MySQLiteHelper.FOOD + " where " +
-                MySQLiteHelper.NAME + " = " + name;
-        Cursor cursor = bd.rawQuery(Query, null);*/
+        Cursor cursor = db.query(MySQLiteHelper.FOOD, columns, selection, selectionArgs,
+                null, null, null, limit);
         if(cursor == null)
             return false;
         if(cursor.getCount() > 0){
@@ -114,6 +111,7 @@ public class add_food extends AppCompatActivity {
         }
         cursor.close();
 
+        //insert in the DB
         ContentValues row = new ContentValues();
         row.put(MySQLiteHelper.NAME,name);
         row.put(MySQLiteHelper.CALORIE,calorie);
@@ -134,8 +132,6 @@ public class add_food extends AppCompatActivity {
             String lipids = ed_lipids.getText().toString();
             String carbohydrates = ed_carbohydrates.getText().toString();
             String protein = ed_protein.getText().toString();
-            //uncomment (*) if we want all entries to be filled
-            /* (*)
             if(TextUtils.isEmpty(name) || TextUtils.isEmpty(calorie) ||
                     TextUtils.isEmpty(lipids) || TextUtils.isEmpty(carbohydrates) ||
                     TextUtils.isEmpty(protein))
@@ -143,13 +139,12 @@ public class add_food extends AppCompatActivity {
             else
                 addRow(name,Integer.parseInt(calorie),Integer.parseInt(lipids),
                         Integer.parseInt(carbohydrates),Integer.parseInt(protein));
-                        */
-        }//(*) else{
+        }else{
             if(TextUtils.isEmpty(calorie) || TextUtils.isEmpty(name))
                 makeToast("Please enter a name AND a calorie value at least");
             else
                 addRow(name,Integer.parseInt(calorie));
-        //(*)}
+        }
         finish();
     }
 
