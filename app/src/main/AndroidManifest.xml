@@ -16,7 +16,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".add_food"></activity>
+        <activity android:name=".add_food" />
+        <activity android:name=".show_food_db"></activity>
     </application>
 
 </manifest>
