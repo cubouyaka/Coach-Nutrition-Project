@@ -8,16 +8,8 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.oc.rss.coach_nutrition_project.MainActivity">
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    tools:context="com.oc.rss.coach_nutrition_project.MainActivity"
+    android:orientation="vertical">
 
     <Button
         android:id="@+id/b_add_food"
@@ -27,5 +19,18 @@
         android:text="Add Food"
         tools:layout_editor_absoluteX="2dp"
         tools:layout_editor_absoluteY="1dp" />
+
+    <Button
+        android:id="@+id/b_settings"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="buttonSettings"
+        android:text="Settings" />
+
+    <TextView
+        android:id="@+id/t"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="TextView" />
 
 </LinearLayout>
