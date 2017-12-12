@@ -134,8 +134,9 @@ public class add_food extends AppCompatActivity {
             String lipids = ed_lipids.getText().toString();
             String carbohydrates = ed_carbohydrates.getText().toString();
             String protein = ed_protein.getText().toString();
-            //uncomment if we want all entries to be filled
-            /*if(TextUtils.isEmpty(name) || TextUtils.isEmpty(calorie) ||
+            //uncomment (*) if we want all entries to be filled
+            /* (*)
+            if(TextUtils.isEmpty(name) || TextUtils.isEmpty(calorie) ||
                     TextUtils.isEmpty(lipids) || TextUtils.isEmpty(carbohydrates) ||
                     TextUtils.isEmpty(protein))
                 makeToast("Please fill all entries");
@@ -143,12 +144,13 @@ public class add_food extends AppCompatActivity {
                 addRow(name,Integer.parseInt(calorie),Integer.parseInt(lipids),
                         Integer.parseInt(carbohydrates),Integer.parseInt(protein));
                         */
-        }//else{
+        }//(*) else{
             if(TextUtils.isEmpty(calorie) || TextUtils.isEmpty(name))
                 makeToast("Please enter a name AND a calorie value at least");
             else
                 addRow(name,Integer.parseInt(calorie));
-        //}
+        //(*)}
+        finish();
     }
 
 
