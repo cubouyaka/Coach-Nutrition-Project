@@ -3,6 +3,8 @@ package com.oc.rss.coach_nutrition_project;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
+import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -10,11 +12,12 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
-    Button b_go;
-    Button b_settings ;
+    private Button b_go;
+    private Button b_settings ;
     private static int OK_CODE = 1;
     public int min_daily, max_daily;
-    TextView textView;
+    private TextView textView;
+    private Toolbar toolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,6 +26,14 @@ public class MainActivity extends AppCompatActivity {
         b_go = (Button)findViewById(R.id.b_add_food);
         b_settings = (Button)findViewById(R.id.b_settings);
         textView = (TextView)findViewById(R.id.t);
+        toolbar = (Toolbar)findViewById(R.id.toolBar);
+        setSupportActionBar(toolbar);
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu){
+        getMenuInflater().inflate(R.menu.menu_main, menu);
+        return true;
     }
 
     public void onClick(View v){
