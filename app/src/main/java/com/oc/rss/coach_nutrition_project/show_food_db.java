@@ -28,8 +28,8 @@ public class show_food_db extends AppCompatActivity {
     private Spinner spinner;
     private SimpleCursorAdapter spinnerAdapter;
     private SimpleCursorAdapter listAdapter;
-    private ListView titre;
-    private long spinnerID;
+    private ListView listFood;
+    // private long spinnerID;
 
     ArrayList<String> arrayList;
 
@@ -39,20 +39,24 @@ public class show_food_db extends AppCompatActivity {
         setContentView(R.layout.activity_show_food_db);
 
         authority = getResources().getString(R.string.authority);
+
+        listFood = (ListView) findViewById(R.id.list);
+        listAdapter = new SimpleCursorAdapter(this,
+                android.R.layout.simple_list_item_1, null,
+                new String[]{"Name", "Calorie"},
+                new int[]{android.R.id.text1}, 0);
+        listFood.setAdapter(listAdapter);
+
+        displayFood ();
+
+        /*
         spinner = (Spinner) findViewById(R.id.spinner);
 
         spinnerAdapter = new SimpleCursorAdapter(this,
                 android.R.layout.simple_spinner_item, null,
-                new String[]{"Name"},
+                new String[]{"Name", "Calorie"},
                 new int[]{android.R.id.text1}, 0);
         spinner.setAdapter(spinnerAdapter);
-
-        titre = (ListView) findViewById(R.id.list);
-        listAdapter = new SimpleCursorAdapter(this,
-                android.R.layout.simple_list_item_1, null,
-                new String[]{"Calorie"},
-                new int[]{android.R.id.text1}, 0);
-        titre.setAdapter(listAdapter);
 
         getLoaderManager().initLoader(0, null,
                 new LoaderManager.LoaderCallbacks<Cursor>() {
@@ -82,22 +86,30 @@ public class show_food_db extends AppCompatActivity {
                 spinnerAdapter.notifyDataSetChanged();
             }
         });
+        */
     }
 
-    public void afficher(View view) {
+    public void displayFood () {
 
-        long id = spinner.getSelectedItemId();
-        Log.d("Debug","afficher");
-        Toast.makeText(getApplicationContext(), "id=" + id, Toast.LENGTH_SHORT).show();
+        final Uri uri;
         Uri.Builder builder = new Uri.Builder();
-        builder.scheme("content")
+        uri = builder.scheme("content")
                 .authority(authority)
-                .appendPath("food");
-        builder = ContentUris.appendId(builder, id);
-        final Uri uri = builder.build();
-        Log.d("uri=", uri.toString());
+                .appendPath("food")
+                .build();
 
-        // Pour alimenter la liste de titres il faut utiliser
+        // long id = spinner.getSelectedItemId();
+        // Log.d("Debug","afficher");
+        // Toast.makeText(getApplicationContext(), "id=" + id, Toast.LENGTH_SHORT).show();
+        // Uri.Builder builder = new Uri.Builder();
+        // builder.scheme("content")
+        //      .authority(authority)
+        //      .appendPath("food");
+        // builder = ContentUris.appendId(builder, id);
+        // final Uri uri = builder.build();
+        // Log.d("uri=", uri.toString());
+
+        // Pour alimenter la liste de listFood il faut utiliser
         // restartLoader() et non pas initLoader().
         // Quand on change l'auteur alors initLoader ne  reinitialise pas
         // le chargement de donnees.
