@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Coach-Nutrition-Project</string>
+    <string name="authority">paris7.appduturfu.calorieprovider</string>
 </resources>

@@ -17,8 +17,13 @@ public class MainActivity extends AppCompatActivity {
         go = (Button)findViewById(R.id.b_add_food);
     }
 
-    public void onClick(View v){
-        Intent i = new Intent(this,add_food.class);
-        startActivity(i);
+    public void onClickAddFood (View view){
+        Intent intent = new Intent (this, add_food.class);
+        startActivity (intent);
+    }
+
+    public void onClickShowFood (View view){
+        Intent intent = new Intent (this, show_food_db.class);
+        startActivity (intent);
     }
 }

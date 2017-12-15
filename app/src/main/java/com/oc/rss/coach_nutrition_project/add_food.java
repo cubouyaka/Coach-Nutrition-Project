@@ -52,6 +52,7 @@ public class add_food extends AppCompatActivity {
     }
 
     public boolean addRow(String name, int calorie, int lipids, int carbohydrates, int protein){
+
         MySQLiteHelper helper = new MySQLiteHelper(this);
         SQLiteDatabase db = helper.getWritableDatabase();
 
@@ -91,7 +92,8 @@ public class add_food extends AppCompatActivity {
     }
 
     public boolean addRow(String name, int calorie){
-        MySQLiteHelper helper = new MySQLiteHelper(this);
+
+        MySQLiteHelper helper = MySQLiteHelper.getInstance(this);
         SQLiteDatabase db = helper.getWritableDatabase();
 
         //check if the entry is already in the DB
@@ -152,43 +154,5 @@ public class add_food extends AppCompatActivity {
     public void makeToast(String s) {
         Toast t = Toast.makeText(this,s,Toast.LENGTH_LONG);
         t.show();
-    }
-}
-
-class MySQLiteHelper extends SQLiteOpenHelper {
-
-    private static final String DB_NAME = "food.db";
-    public static final String FOOD = "food";
-
-    public static final String NAME = "Name";
-    public static final String CALORIE = "Calorie";
-    public static final String LIPIDS = "Lipids";
-    public static final String CARBOHYDRATES = "Carbohydrates"; //Glucides
-    public static final String PROTEIN = "Protein";
-
-    private static int VERSION = 1;
-    private static final String CREATE_ADRESSE =
-            "create table " + FOOD + "( " +
-                    NAME + " String not null primary key, " +
-                    CALORIE + " int not null," +
-                    LIPIDS + " int," +
-                    CARBOHYDRATES + " int," +
-                    PROTEIN + " int);";
-
-    public MySQLiteHelper(Context context) {
-        super(context, DB_NAME, null, VERSION);
-    }
-
-    @Override
-    public void onCreate(SQLiteDatabase db) {
-        db.execSQL(CREATE_ADRESSE);
-    }
-
-    @Override
-    public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-        if (newVersion > oldVersion) {
-            db.execSQL("drop table if exists " + FOOD);
-            onCreate(db);
-        }
     }
 }

@@ -9,6 +9,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
+        <provider
+            android:name=".CalorieContentProvider"
+            android:authorities="@string/authority"
+            android:enabled="true"
+            android:exported="true" />
+
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -17,7 +24,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".add_food" />
-        <activity android:name=".show_food_db"></activity>
+        <activity android:name=".show_food_db" />
+        <activity android:name=".CalorieContentProvider"></activity>
     </application>
 
 </manifest>
