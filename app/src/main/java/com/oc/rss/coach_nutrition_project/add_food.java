@@ -2,6 +2,7 @@ package com.oc.rss.coach_nutrition_project;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.content.res.Configuration;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
@@ -31,7 +32,10 @@ public class add_food extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_add_food);
+        if(getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE)
+            setContentView(R.layout.activity_add_food_land);
+        else //if the screen is not in landscape orientation
+            setContentView(R.layout.activity_add_food);
         layout_opt = (LinearLayout)findViewById(R.id.layout_opt);
         layout_opt.setVisibility(View.INVISIBLE); //invisible by default
         ed_name = (EditText)findViewById(R.id.ed_name);
@@ -49,6 +53,23 @@ public class add_food extends AppCompatActivity {
                     layout_opt.setVisibility(View.INVISIBLE);
             }
         });
+        if(savedInstanceState != null){
+            ed_name.setText(savedInstanceState.getString("name"," "));
+            ed_calorie.setText(savedInstanceState.getString("calorie"," "));
+            ed_lipids.setText(savedInstanceState.getString("lipids"," "));
+            ed_carbohydrates.setText(savedInstanceState.getString("carbohydrates"," "));
+            ed_protein.setText(savedInstanceState.getString("protein"," "));
+        }
+    }
+
+    @Override
+    public void onSaveInstanceState(Bundle outState){
+        super.onSaveInstanceState(outState);
+        outState.putString("name",ed_name.getText().toString());
+        outState.putString("calorie",ed_calorie.getText().toString());
+        outState.putString("lipids",ed_lipids.getText().toString());
+        outState.putString("carbohydrates",ed_carbohydrates.getText().toString());
+        outState.putString("protein",ed_protein.getText().toString());
     }
 
     public boolean addRow(String name, int calorie, int lipids, int carbohydrates, int protein){
