@@ -1,4 +1,9 @@
 <resources>
-    <string name="app_name">Coach-Nutrition-Project</string>
+    <string name="app_name">Coach Nutrition</string>
     <string name="authority">paris7.appduturfu.calorieprovider</string>
+    <string name="welcome">Your daily calories</string>
+    <string name="nocalorie">0</string>
+    <string name="meal">Add meal</string>
+    <string name="history">History</string>
+    <string name="settings">Settings</string>
 </resources>

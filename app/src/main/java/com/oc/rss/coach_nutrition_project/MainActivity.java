@@ -16,16 +16,12 @@ public class MainActivity extends AppCompatActivity {
     private Button b_settings ;
     private static int OK_CODE = 1;
     public int min_daily, max_daily;
-    private TextView textView;
     private Toolbar toolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        b_go = (Button)findViewById(R.id.b_add_food);
-        b_settings = (Button)findViewById(R.id.b_settings);
-        textView = (TextView)findViewById(R.id.t);
         toolbar = (Toolbar)findViewById(R.id.toolBar);
         setSupportActionBar(toolbar);
     }
@@ -36,17 +32,17 @@ public class MainActivity extends AppCompatActivity {
         return true;
     }
 
-    public void onClickAddFood (View view){
+    public void onClickMeal (View view){
         Intent intent = new Intent (this, add_food.class);
         startActivity (intent);
     }
 
-    public void onClickShowFood (View view){
+    public void onClickHistory (View view){
         Intent intent = new Intent (this, show_food_db.class);
         startActivity (intent);
     }
 
-    public void buttonSettings(View v) {
+    public void onClickSettings (View v) {
         startActivityForResult(new Intent(this, settings.class), OK_CODE);
     }
 
@@ -54,9 +50,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (requestCode == 1) {
             if(resultCode == OK_CODE){
-                min_daily = Integer.parseInt(data.getStringExtra("min"));
-                max_daily = Integer.parseInt(data.getStringExtra("max"));
-                textView.setText(min_daily+" "+ max_daily);
+                //min_daily = Integer.parseInt(data.getStringExtra("min"));
+                //max_daily = Integer.parseInt(data.getStringExtra("max"));
             }
         }
     }
