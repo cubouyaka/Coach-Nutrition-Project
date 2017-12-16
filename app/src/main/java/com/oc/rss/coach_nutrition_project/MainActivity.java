@@ -12,10 +12,6 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
-    private Button b_go;
-    private Button b_settings ;
-    private static int OK_CODE = 1;
-    public int min_daily, max_daily;
     private Toolbar toolbar;
 
     @Override
@@ -33,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onClickMeal (View view){
-        Intent intent = new Intent (this, add_food.class);
+        Intent intent = new Intent (this, GetDate.class);
         startActivity (intent);
     }
 

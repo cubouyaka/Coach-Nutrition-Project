@@ -13,6 +13,7 @@
     <string name="add">Add</string>
     <string name="cancel">Cancel</string>
     <string name="ok">Ok</string>
+    <string name="selectDate">Choose a date</string>
     <string name="dailyGoalInfo">Set your daily goals of calories</string>
     <string name="minDaily">Min daily calories</string>
     <string name="maxDaily">Max daily calories</string>
