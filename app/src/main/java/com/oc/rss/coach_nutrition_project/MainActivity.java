@@ -43,17 +43,22 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onClickSettings (View v) {
-        startActivityForResult(new Intent(this, settings.class), OK_CODE);
+
+        Intent intent = new Intent (this, AllSettings.class);
+        startActivity (intent);
     }
 
+    //startActivityForResult(new Intent(this, settings.class), OK_CODE);
+
+    /*
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (requestCode == 1) {
             if(resultCode == OK_CODE){
-                //min_daily = Integer.parseInt(data.getStringExtra("min"));
-                //max_daily = Integer.parseInt(data.getStringExtra("max"));
+                min_daily = Integer.parseInt(data.getStringExtra("min"));
+                max_daily = Integer.parseInt(data.getStringExtra("max"));
             }
         }
     }
-
+    */
 }

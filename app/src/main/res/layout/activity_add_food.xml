@@ -24,10 +24,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:fontFamily="casual"
             android:gravity="center"
             android:text="Add nourishment"
-            android:textColor="@android:color/holo_red_dark"
-            android:textSize="24sp"
+            android:textAllCaps="true"
+            android:textColor="@android:color/background_light"
+            android:textSize="30sp"
             android:textStyle="bold" />
     </LinearLayout>
 
@@ -41,17 +43,20 @@
             android:id="@+id/name_food"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
+            android:layout_weight="0.99"
+            android:fontFamily="casual"
             android:gravity="center_vertical"
-            android:text="Name : "
-            android:layout_weight="0.99" />
+            android:text="Name : " />
 
         <EditText
             android:id="@+id/ed_name"
-            android:layout_width="wrap_content"
+            android:layout_width="214dp"
             android:layout_height="wrap_content"
             android:ems="10"
+            android:fontFamily="casual"
             android:hint="ex : banana"
-            android:inputType="textPersonName" />
+            android:inputType="textPersonName"
+            android:textColor="@color/colorPrimaryDark" />
     </LinearLayout>
 
     <LinearLayout
@@ -66,16 +71,20 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="1.09"
+            android:fontFamily="casual"
             android:gravity="center_vertical"
             android:text="Calorie : " />
 
         <EditText
             android:id="@+id/ed_calorie"
-            android:layout_width="wrap_content"
+            android:layout_width="214dp"
             android:layout_height="wrap_content"
+            android:layout_weight="0.01"
             android:ems="10"
+            android:fontFamily="casual"
             android:hint="ex : 300"
-            android:inputType="numberSigned" />
+            android:inputType="numberSigned"
+            android:textColor="@color/colorPrimaryDark" />
 
     </LinearLayout>
 
@@ -95,15 +104,19 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="8.73"
+                android:fontFamily="casual"
                 android:text="Lipids :" />
 
             <EditText
                 android:id="@+id/ed_lipids"
-                android:layout_width="wrap_content"
+                android:layout_width="214dp"
                 android:layout_height="wrap_content"
+                android:layout_weight="0.08"
                 android:ems="10"
+                android:fontFamily="casual"
                 android:hint="ex : 250"
-                android:inputType="numberSigned" />
+                android:inputType="numberSigned"
+                android:textColor="@color/colorPrimaryDark" />
 
         </LinearLayout>
 
@@ -117,15 +130,18 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="3.76"
+                android:fontFamily="casual"
                 android:text="Carbohydrates :" />
 
             <EditText
                 android:id="@+id/ed_carbohydrates"
-                android:layout_width="wrap_content"
+                android:layout_width="215dp"
                 android:layout_height="wrap_content"
                 android:ems="10"
+                android:fontFamily="casual"
                 android:hint="ex : 12"
-                android:inputType="numberSigned" />
+                android:inputType="numberSigned"
+                android:textColor="@color/colorPrimaryDark" />
         </LinearLayout>
 
         <LinearLayout
@@ -138,15 +154,19 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:fontFamily="casual"
                 android:text="Protein :" />
 
             <EditText
                 android:id="@+id/ed_protein"
-                android:layout_width="wrap_content"
+                android:layout_width="214dp"
                 android:layout_height="wrap_content"
+                android:layout_weight="0.01"
                 android:ems="10"
+                android:fontFamily="casual"
                 android:hint="ex : 23"
-                android:inputType="numberSigned" />
+                android:inputType="numberSigned"
+                android:textColor="@color/colorPrimaryDark" />
 
         </LinearLayout>
     </LinearLayout>
@@ -156,7 +176,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="0.82"
-        android:text="Full options" />
+        android:fontFamily="casual"
+        android:text="Full options"
+        app:buttonTint="@android:color/background_light" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -166,11 +188,16 @@
 
         <Button
             android:id="@+id/b_add"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:backgroundTint="@color/colorButton"
             android:layout_width="222dp"
             android:layout_height="wrap_content"
-            android:background="@color/colorButton"
+            android:fontFamily="casual"
+            android:text="@string/add"
+            android:textColor="@android:color/background_light"
+            android:textSize="30sp"
             android:onClick="buttonAdd"
-            android:text="ADD" />
+            android:textStyle="bold" />
     </LinearLayout>
 
 </LinearLayout>

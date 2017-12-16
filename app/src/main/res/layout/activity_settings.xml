@@ -18,9 +18,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="0.11"
+        android:fontFamily="casual"
         android:gravity="center"
-        android:text="Set your daily goals of calories"
-        android:textSize="18sp"
+        android:text="@string/dailyGoalInfo"
+        android:textAllCaps="true"
+        android:textColor="@android:color/background_light"
+        android:textSize="30sp"
         android:textStyle="bold" />
 
     <LinearLayout
@@ -32,7 +35,8 @@
             android:id="@+id/textView3"
             android:layout_width="129dp"
             android:layout_height="wrap_content"
-            android:text="min daily calories" />
+            android:fontFamily="casual"
+            android:text="@string/minDaily" />
 
         <EditText
             android:id="@+id/ed_min"
@@ -40,7 +44,9 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:ems="10"
-            android:inputType="numberSigned" />
+            android:fontFamily="casual"
+            android:inputType="numberSigned"
+            android:textColor="@color/colorPrimaryDark" />
 
     </LinearLayout>
 
@@ -53,7 +59,8 @@
             android:id="@+id/textView7"
             android:layout_width="129dp"
             android:layout_height="wrap_content"
-            android:text="max daily calories" />
+            android:fontFamily="casual"
+            android:text="@string/maxDaily" />
 
         <EditText
             android:id="@+id/ed_max"
@@ -61,7 +68,9 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:ems="10"
-            android:inputType="numberSigned" />
+            android:fontFamily="casual"
+            android:inputType="numberSigned"
+            android:textColor="@color/colorPrimaryDark" />
 
     </LinearLayout>
 
@@ -74,19 +83,31 @@
 
         <Button
             android:id="@+id/b_cancel"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:backgroundTint="@color/colorButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:fontFamily="casual"
+            android:text="@string/cancel"
+            android:textColor="@android:color/background_light"
+            android:textSize="30sp"
             android:layout_weight="1"
             android:onClick="buttonCancel"
-            android:text="CANCEL" />
+            android:textStyle="bold" />
 
         <Button
             android:id="@+id/b_ok"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:backgroundTint="@color/colorButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
+            android:fontFamily="casual"
+            android:text="@string/ok"
+            android:textColor="@android:color/background_light"
+            android:textSize="30sp"
             android:onClick="buttonOk"
-            android:text="OK" />
+            android:layout_weight="1"
+            android:textStyle="bold" />
     </LinearLayout>
 
 </LinearLayout>
