@@ -15,10 +15,16 @@ public class MainActivity extends AppCompatActivity {
     private Toolbar toolbar;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        toolbar = (Toolbar)findViewById(R.id.toolBar);
+    protected void onCreate (Bundle savedInstanceState) {
+
+        super.onCreate (savedInstanceState);
+        setContentView (R.layout.activity_main);
+        toolbar = (Toolbar) findViewById (R.id.toolBar);
+        TextView calorie = (TextView) findViewById (R.id.calories);
+
+        // Initialize today's calories value
+        calorie.setText ("" + CalorieManager.getInstance (this).getTodayCalorieValue ());
+
         setSupportActionBar(toolbar);
     }
 

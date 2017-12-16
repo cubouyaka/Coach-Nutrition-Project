@@ -26,7 +26,8 @@
         <activity android:name=".show_food_db" />
         <activity android:name=".settings" />
         <activity android:name=".AllSettings" />
-        <activity android:name=".GetDate"></activity>
+        <activity android:name=".GetDate" />
+        <activity android:name=".CalorieManager"></activity>
     </application>
 
 </manifest>

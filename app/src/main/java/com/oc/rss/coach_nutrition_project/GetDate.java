@@ -37,15 +37,12 @@ public class GetDate extends AppCompatActivity {
 
     public void onClickOk (View view){
 
-        // Get time from datePicker in ms
-        int day = datePicker.getDayOfMonth ();
+        // Store time selected by the user
+        int day   = datePicker.getDayOfMonth ();
         int month = datePicker.getMonth ();
-        int year =  datePicker.getYear ();
+        int year  =  datePicker.getYear ();
 
-        Calendar calendar = Calendar.getInstance ();
-        calendar.set(year, month, day);
-
-        calendar.getTime();
+        CalorieManager.getInstance (this).setDateIndex (day, month, year);
 
         Intent intent = new Intent (this, show_food_db.class);
         startActivity (intent);
