@@ -13,6 +13,8 @@ import android.widget.Toast;
 public class MainActivity extends AppCompatActivity {
 
     private Toolbar toolbar;
+    private TextView calorie;
+    int OK_CODE = 1;
 
     @Override
     protected void onCreate (Bundle savedInstanceState) {
@@ -20,7 +22,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate (savedInstanceState);
         setContentView (R.layout.activity_main);
         toolbar = (Toolbar) findViewById (R.id.toolBar);
-        TextView calorie = (TextView) findViewById (R.id.calories);
+        calorie = (TextView) findViewById (R.id.calories);
+
+        CalorieManager.getInstance (this).loadHistory ();
 
         // Initialize today's calories value
         calorie.setText ("" + CalorieManager.getInstance (this).getTodayCalorieValue ());
@@ -35,8 +39,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onClickMeal (View view){
-        Intent intent = new Intent (this, GetDate.class);
-        startActivity (intent);
+
+        startActivityForResult(new Intent(this, GetDate.class), OK_CODE);
     }
 
     public void onClickHistory (View view){
@@ -50,17 +54,20 @@ public class MainActivity extends AppCompatActivity {
         startActivity (intent);
     }
 
-    //startActivityForResult(new Intent(this, settings.class), OK_CODE);
 
-    /*
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+
+        // Initialize today's calories value
+        calorie.setText ("" + CalorieManager.getInstance (this).getTodayCalorieValue ());
+
+        /*
         if (requestCode == 1) {
             if(resultCode == OK_CODE){
                 min_daily = Integer.parseInt(data.getStringExtra("min"));
                 max_daily = Integer.parseInt(data.getStringExtra("max"));
             }
         }
+        */
     }
-    */
 }

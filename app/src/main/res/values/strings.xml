@@ -17,4 +17,8 @@
     <string name="dailyGoalInfo">Set your daily goals of calories</string>
     <string name="minDaily">Min daily calories</string>
     <string name="maxDaily">Max daily calories</string>
+    <string name="chooseFood">Choose your meal</string>
+    <string name="quantity">Quantity</string>
+    <string name="totalCalorie">Total calories:</string>
+
 </resources>

@@ -47,6 +47,7 @@ public class CalorieManager {
     void addCalorieValue(int amount) {
 
         calorie[current_date_index] += amount;
+        saveHistory ();
     }
 
     // Return calorie value of the last day
