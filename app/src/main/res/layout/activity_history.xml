@@ -6,4 +6,9 @@
     android:layout_height="match_parent"
     tools:context="com.oc.rss.coach_nutrition_project.History">
 
+    <include
+        android:id="@+id/toolBarH"
+        layout="@layout/toolbar"
+        android:visibility="visible" />
+
 </android.support.constraint.ConstraintLayout>

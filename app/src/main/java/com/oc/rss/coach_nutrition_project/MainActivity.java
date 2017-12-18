@@ -1,6 +1,7 @@
 package com.oc.rss.coach_nutrition_project;
 
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
@@ -21,7 +22,11 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate (Bundle savedInstanceState) {
 
         super.onCreate (savedInstanceState);
-        setContentView (R.layout.activity_main);
+        if(getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE)
+            setContentView(R.layout.activity_main_land);
+        else //if the screen is not in landscape orientation
+            setContentView(R.layout.activity_main);
+
         toolbar = (Toolbar) findViewById (R.id.toolBar);
         calorie = (TextView) findViewById (R.id.calories);
 

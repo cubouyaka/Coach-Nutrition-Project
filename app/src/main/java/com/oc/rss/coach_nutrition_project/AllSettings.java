@@ -1,6 +1,7 @@
 package com.oc.rss.coach_nutrition_project;
 
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -11,7 +12,10 @@ public class AllSettings extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_all_settings);
+        if(getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE)
+            setContentView(R.layout.activity_all_settings_land);
+        else //if the screen is not in landscape orientation
+            setContentView(R.layout.activity_all_settings);
     }
 
     public void onClickDailyGoal (View v) {

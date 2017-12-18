@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBackground"
+    tools:context=".MainActivity">
+
+    <include
+        android:id="@+id/toolBar"
+        layout="@layout/toolbar"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:orientation="horizontal">
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.01"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/welcome"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="casual"
+            android:gravity="center"
+            android:text="@string/welcome"
+            android:textAllCaps="true"
+            android:textColor="@android:color/background_light"
+            android:textSize="30sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/calories"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="casual"
+            android:gravity="center"
+            android:text="@string/nocalorie"
+            android:textAllCaps="true"
+            android:textColor="@android:color/background_light"
+            android:textSize="50sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@+id/meal"
+            style="@android:style/Widget.DeviceDefault.ImageButton"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_margin="10dp"
+            android:backgroundTint="@color/colorButton"
+            android:onClick="onClickMeal"
+            android:scaleType="fitXY"
+            app:srcCompat="@drawable/ic_restaurant_menu_black_24dp" />
+
+        <ImageButton
+            android:id="@+id/stats"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_margin="10dp"
+            android:backgroundTint="@color/colorButton"
+            android:onClick="onClickHistory"
+            android:scaleType="fitXY"
+            app:srcCompat="@drawable/ic_insert_chart_black_24dp" />
+
+        <ImageButton
+            android:id="@+id/settings"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_margin="10dp"
+            android:backgroundTint="@color/colorButton"
+            android:onClick="onClickSettings"
+            android:scaleType="fitXY"
+            app:srcCompat="@drawable/ic_settings_black_24dp" />
+
+    </LinearLayout>
+
+
+</LinearLayout>

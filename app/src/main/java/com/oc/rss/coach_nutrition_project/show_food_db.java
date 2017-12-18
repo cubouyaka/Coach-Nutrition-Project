@@ -11,6 +11,7 @@ import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.AbsListView;
@@ -65,6 +66,12 @@ public class show_food_db extends AppCompatActivity {
         listFood.setAdapter(listAdapter);
 
         displayFood ();
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu){
+        getMenuInflater().inflate(R.menu.menu_main, menu);
+        return true;
     }
 
     public void addFoodToHistory (View v) {
