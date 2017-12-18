@@ -17,6 +17,8 @@ public class CalorieManager {
     public int calorie[] = new int[7];
     public long timestamp;
     public int current_date_index = 0;
+    public int minCalorie = 0;
+    public int maxCalorie = 0;
 
     // Get instance of the calorie manager
     static CalorieManager getInstance(AppCompatActivity app) {
@@ -81,6 +83,9 @@ public class CalorieManager {
     void loadHistory () {
 
         SharedPreferences pref = caller.getSharedPreferences("OBJECTIVE", Context.MODE_PRIVATE);
+
+        minCalorie = pref.getInt ("min", caller.getResources ().getInteger (R.integer.minCalorie));
+        maxCalorie = pref.getInt ("max", caller.getResources ().getInteger (R.integer.maxCalorie));
 
         // Load the calorie history
         for (int i = 0 ; i < 7 ; i++)

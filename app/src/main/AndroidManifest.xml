@@ -30,8 +30,8 @@
         <activity android:name=".AllSettings" />
         <activity android:name=".GetDate" />
         <activity android:name=".CalorieManager" />
-        <activity android:name=".SearchFile"></activity>
-
+        <activity android:name=".SearchFile" />
+        <activity android:name=".History"></activity>
     </application>
 
 </manifest>

@@ -44,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onClickHistory (View view){
-        Intent intent = new Intent (this, show_food_db.class);
+        Intent intent = new Intent (this, History.class);
         startActivity (intent);
     }
 

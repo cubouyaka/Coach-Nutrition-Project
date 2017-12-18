@@ -19,6 +19,7 @@ public class settings extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_settings);
         ed_min = (EditText) findViewById(R.id.ed_min);
@@ -65,6 +66,9 @@ public class settings extends AppCompatActivity {
         prefEdit.putInt("min", min);
         prefEdit.putInt("max", max);
         prefEdit.apply();
+
+        CalorieManager.getInstance (this).minCalorie = min;
+        CalorieManager.getInstance (this).maxCalorie = max;
 
         Intent i = new Intent();
         i.putExtra("min",strMin);
