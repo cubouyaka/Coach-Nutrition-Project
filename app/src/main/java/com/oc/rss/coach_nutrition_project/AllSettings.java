@@ -27,7 +27,7 @@ public class AllSettings extends AppCompatActivity {
 
     public void onClickImportCSV (View v) {
 
-        Intent intent = new Intent (this, AllSettings.class);
+        Intent intent = new Intent (this, SearchFile.class);
         startActivity (intent);
     }
 
