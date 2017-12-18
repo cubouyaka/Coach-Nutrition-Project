@@ -10,16 +10,14 @@
         android:layout_width="344dp"
         android:layout_height="551dp"
         android:orientation="vertical"
+        android:weightSum="1"
         tools:layout_editor_absoluteY="8dp"
-        tools:layout_editor_absoluteX="8dp"
-        android:weightSum="1">
+        tools:layout_editor_absoluteX="8dp">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="30dp"
             android:orientation="horizontal"
-            tools:layout_editor_absoluteY="8dp"
-            tools:layout_editor_absoluteX="8dp"
             android:weightSum="1"
             android:layout_weight="0.06">
 
@@ -56,35 +54,23 @@
             tools:layout_editor_absoluteX="8dp"
             android:weightSum="1">
 
-                    <LinearLayout
-            android:layout_width="44dp"
+            <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical"
-            tools:layout_editor_absoluteY="8dp"
-            tools:layout_editor_absoluteX="8dp"
-            android:layout_weight="0.24">
+            android:orientation="vertical">
 
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:orientation="vertical"
-            tools:layout_editor_absoluteY="8dp"
-            tools:layout_editor_absoluteX="8dp">
-
-            <Button
-                android:id="@+id/dailyGoal"
-                style="@style/Widget.AppCompat.Button.Borderless"
-                android:layout_width="match_parent"
-                android:layout_height="100dp"
-                android:backgroundTint="@color/colorButton"
-                android:fontFamily="casual"
-                android:text="@string/dailyGoal"
-                android:textColor="@android:color/background_light"
-                android:textSize="30sp"
-                android:onClick="onClickDailyGoal"
-                android:textStyle="bold" />
+                <Button
+                    android:id="@+id/dailyGoal"
+                    style="@style/Widget.AppCompat.Button.Borderless"
+                    android:layout_width="match_parent"
+                    android:layout_height="80dp"
+                    android:backgroundTint="@color/colorButton"
+                    android:fontFamily="casual"
+                    android:onClick="onClickDailyGoal"
+                    android:text="@string/dailyGoal"
+                    android:textColor="@android:color/background_light"
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -92,18 +78,18 @@
                 android:background="@color/colorSpace"
                 android:orientation="vertical"></LinearLayout>
 
-            <Button
-                android:id="@+id/addFood"
-                style="@style/Widget.AppCompat.Button.Borderless"
-                android:layout_width="match_parent"
-                android:layout_height="100dp"
-                android:backgroundTint="@color/colorButton"
-                android:fontFamily="casual"
-                android:text="@string/addFood"
-                android:textColor="@android:color/background_light"
-                android:textSize="30sp"
-                android:onClick="onClickAddFood"
-                android:textStyle="bold" />
+                <Button
+                    android:id="@+id/addFood"
+                    style="@style/Widget.AppCompat.Button.Borderless"
+                    android:layout_width="match_parent"
+                    android:layout_height="80dp"
+                    android:backgroundTint="@color/colorButton"
+                    android:fontFamily="casual"
+                    android:onClick="onClickAddFood"
+                    android:text="@string/addFood"
+                    android:textColor="@android:color/background_light"
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -111,18 +97,18 @@
                 android:background="@color/colorSpace"
                 android:orientation="vertical"></LinearLayout>
 
-            <Button
-                android:id="@+id/importCSV"
-                style="@style/Widget.AppCompat.Button.Borderless"
-                android:layout_width="match_parent"
-                android:layout_height="100dp"
-                android:backgroundTint="@color/colorButton"
-                android:fontFamily="casual"
-                android:text="@string/importCSV"
-                android:textColor="@android:color/background_light"
-                android:textSize="30sp"
-                android:onClick="onClickImportCSV"
-                android:textStyle="bold" />
+                <Button
+                    android:id="@+id/importCSV"
+                    style="@style/Widget.AppCompat.Button.Borderless"
+                    android:layout_width="match_parent"
+                    android:layout_height="80dp"
+                    android:backgroundTint="@color/colorButton"
+                    android:fontFamily="casual"
+                    android:onClick="onClickImportCSV"
+                    android:text="@string/importCSV"
+                    android:textColor="@android:color/background_light"
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -130,19 +116,37 @@
                 android:background="@color/colorSpace"
                 android:orientation="vertical"></LinearLayout>
 
-            <Button
-                android:id="@+id/uploadCSV"
-                style="@style/Widget.AppCompat.Button.Borderless"
-                android:layout_width="match_parent"
-                android:layout_height="100dp"
-                android:backgroundTint="@color/colorButton"
-                android:fontFamily="casual"
-                android:text="@string/uploadCSV"
-                android:textColor="@android:color/background_light"
-                android:textSize="30sp"
-                android:onClick="onClickUploadCSV"
-                android:textStyle="bold" />
+                <Button
+                    android:id="@+id/uploadCSV"
+                    style="@style/Widget.AppCompat.Button.Borderless"
+                    android:layout_width="match_parent"
+                    android:layout_height="80dp"
+                    android:backgroundTint="@color/colorButton"
+                    android:fontFamily="casual"
+                    android:onClick="onClickUploadCSV"
+                    android:text="@string/uploadCSV"
+                    android:textColor="@android:color/background_light"
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/colorSpace"
+                android:orientation="vertical"></LinearLayout>
+
+                <Button
+                    android:id="@+id/deleteDabase"
+                    style="@style/Widget.AppCompat.Button.Borderless"
+                    android:layout_width="match_parent"
+                    android:layout_height="80dp"
+                    android:backgroundTint="@color/colorButton"
+                    android:fontFamily="casual"
+                    android:onClick="onClickDeleteDatabase"
+                    android:text="@string/deleteDatabase"
+                    android:textColor="@android:color/background_light"
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
             </LinearLayout>
         </LinearLayout>
     </LinearLayout>

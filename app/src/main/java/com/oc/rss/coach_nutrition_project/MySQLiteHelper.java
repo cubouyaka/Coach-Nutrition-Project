@@ -37,13 +37,23 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
         db.execSQL(CREATE_ADRESSE);
     }
 
+    public void refreshDataBase (SQLiteDatabase db) {
+
+            db.execSQL("drop table if exists " + FOOD);
+            onCreate(db);
+    }
+
+    public void refreshDataBase () {
+
+        SQLiteDatabase db = instance.getWritableDatabase();
+        refreshDataBase (db);
+    }
+
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
 
-        if (newVersion > oldVersion) {
-            db.execSQL("drop table if exists " + FOOD);
-            onCreate(db);
-        }
+        if (newVersion > oldVersion)
+            refreshDataBase (db);
     }
 
     public static MySQLiteHelper getInstance(Context context){

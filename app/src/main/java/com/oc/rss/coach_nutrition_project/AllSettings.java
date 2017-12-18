@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Toast;
 
 public class AllSettings extends AppCompatActivity {
 
@@ -35,5 +36,11 @@ public class AllSettings extends AppCompatActivity {
 
         Intent intent = new Intent (this, AllSettings.class);
         startActivity (intent);
+    }
+
+    public void onClickDeleteDatabase (View v) {
+
+        MySQLiteHelper.getInstance(this).refreshDataBase();
+        Toast.makeText(this, "Database deleted!", Toast.LENGTH_LONG).show();
     }
 }
