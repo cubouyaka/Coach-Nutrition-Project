@@ -1,35 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.oc.rss.coach_nutrition_project.SearchFile">
+    android:orientation="vertical">
 
     <LinearLayout
-        android:layout_width="368dp"
-        android:layout_height="551dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:orientation="vertical"
+        android:weightSum="1"
         tools:layout_editor_absoluteX="8dp"
-        tools:layout_editor_absoluteY="8dp"
-        android:weightSum="1">
+        tools:layout_editor_absoluteY="8dp">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:orientation="horizontal">
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="161dp"
+            android:layout_height="wrap_content"
             android:orientation="horizontal">
 
             <TextView
                 android:id="@+id/welcome"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_margin="10dp"
                 android:layout_weight="1"
                 android:ems="10"
                 android:fontFamily="casual"
@@ -41,11 +34,6 @@
                 android:textSize="30sp"
                 android:textStyle="bold" />
         </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="30dp"
-            android:orientation="vertical"></LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -63,27 +51,16 @@
                 style="@style/Widget.AppCompat.Button.Borderless"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_margin="20dp"
                 android:layout_weight="1"
                 android:backgroundTint="@color/colorButton"
                 android:fontFamily="casual"
                 android:onClick="searchFile"
                 android:text="@string/search"
                 android:textColor="@android:color/background_light"
-                android:textSize="50sp"
+                android:textSize="30sp"
                 android:textStyle="bold" />
         </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="@color/colorSpace"
-            android:orientation="vertical"></LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="@color/colorSpace"
-            android:orientation="vertical"></LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -95,26 +72,15 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text=""
                 android:background="@color/black"
+                android:text=""
                 android:textAlignment="center"
                 android:textSize="18sp" />
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="@color/colorSpace"
-            android:orientation="vertical"></LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="83dp"
-            android:orientation="vertical"></LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="255dp"
+            android:layout_height="wrap_content"
             android:orientation="horizontal">
 
             <Button
@@ -122,6 +88,7 @@
                 style="@style/Widget.AppCompat.Button.Borderless"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_margin="20dp"
                 android:layout_weight="1"
                 android:backgroundTint="@color/colorButton"
                 android:fontFamily="casual"
@@ -134,4 +101,5 @@
         </LinearLayout>
 
     </LinearLayout>
-</android.support.constraint.ConstraintLayout>
+
+</LinearLayout>

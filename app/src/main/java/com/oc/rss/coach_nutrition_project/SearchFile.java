@@ -4,6 +4,7 @@ import android.app.Dialog;
 import android.content.ContentResolver;
 import android.content.ContentValues;
 import android.content.DialogInterface;
+import android.content.res.Configuration;
 import android.net.Uri;
 import android.os.Environment;
 import android.support.v4.widget.TextViewCompat;
@@ -35,7 +36,10 @@ public class SearchFile extends AppCompatActivity {
 
         authority = getResources().getString(R.string.authority);
         super.onCreate(savedInstanceState);
-        setContentView (R.layout.activity_search_file);
+        if(getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE)
+            setContentView(R.layout.activity_search_land);
+        else //if the screen is not in landscape orientation
+            setContentView (R.layout.activity_search_file);
         path = (TextView) findViewById (R.id.pathFile);
     }
 
