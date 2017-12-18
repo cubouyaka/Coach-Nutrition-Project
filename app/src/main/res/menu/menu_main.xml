@@ -2,20 +2,61 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools" tools:context=".MainActivity">
-    <item android:id="@+id/action_settings" android:title="Settings"
-        android:orderInCategory="100" app:showAsAction="never"/>
     <item
-        android:title="Search"
-        android:id="@+id/action_search"
-        android:orderInCategory="200"
-        android:icon="@drawable/ic_search"
-        app:showAsAction="ifRoom">
-        </item>
+        android:id="@+id/action_toolbar_settings"
+        android:onClick="onClickItemSettings"
+        android:orderInCategory="3"
+        android:title="@string/settings"
+        android:icon="@drawable/ic_settings_black_24dp"
+        app:showAsAction="always" />
     <item
-        android:title="User"
-        android:id="@+id/action_user"
-        android:orderInCategory="300"
-        android:icon="@drawable/ic_mode_edit"
-        app:showAsAction="ifRoom">
-        </item>
+        android:id="@+id/action_history"
+        android:title="@string/history"
+        android:orderInCategory="2"
+        android:icon="@drawable/ic_insert_chart_black_24dp"
+        android:onClick="onClickItemHistory"
+        app:showAsAction="always"/>
+    <item
+        android:id="@+id/action_AddMeal"
+        android:icon="@drawable/ic_restaurant_menu_black_24dp"
+        android:onClick="onClickItemMeal"
+        android:orderInCategory="1"
+        android:title="@string/meal"
+        app:showAsAction="always"/>
+    <item
+        android:id="@+id/item_history"
+        android:title="@string/history"
+        android:orderInCategory="3"
+        android:icon="@drawable/ic_insert_chart_black_24dp"
+        android:onClick="onClickItemHistory"
+        app:showAsAction="ifRoom"/>
+    <item
+        android:id="@+id/item_AddMeal"
+        android:onClick="onClickItemMeal"
+        android:orderInCategory="1"
+        android:title="@string/meal"
+        app:showAsAction="never"/>
+    <item
+        android:title="@string/settings"
+        android:id="@+id/action_settings"
+        android:onClick="onClickItemSettings"
+        android:orderInCategory="100"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/item_add_food"
+        android:onClick="onClickItemAddFood"
+        android:orderInCategory="4"
+        android:title="@string/addFood"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/item_import_CSV"
+        android:onClick="onClickItemImportCSV"
+        android:orderInCategory="5"
+        android:title="@string/importCSV"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/item_upload_CSV"
+        android:orderInCategory="6"
+        android:title="@string/uploadCSV"
+        app:showAsAction="never" />
 </menu>
