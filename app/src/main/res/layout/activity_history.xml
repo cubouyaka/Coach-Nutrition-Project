@@ -8,7 +8,6 @@
 
     <include
         android:id="@+id/toolBarH"
-        layout="@layout/toolbar"
-        android:visibility="visible" />
+        layout="@layout/toolbar"/>
 
 </android.support.constraint.ConstraintLayout>
