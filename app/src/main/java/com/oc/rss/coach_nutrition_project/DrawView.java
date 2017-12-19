@@ -67,11 +67,6 @@ public class DrawView extends View {
 
             //Display amount of calories per day
             paint.setTextSize(40);
-            paint.setColor(Color.WHITE);
-            canvas.drawText(""+value,0,top+size,paint);
-
-            //Display amount of calories per day
-            paint.setTextSize(40);
             paint.setColor(Color.YELLOW);
             canvas.drawText(""+value,calorieLeft,top + size- calorieHeight,paint);
 
