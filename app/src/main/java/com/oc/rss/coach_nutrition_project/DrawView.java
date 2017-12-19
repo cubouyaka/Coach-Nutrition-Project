@@ -20,7 +20,6 @@ public class DrawView extends View {
     public void onDraw(Canvas canvas) {
 
         int pos = 0;
-        //int colorBackground = getResources ().getColor (R.color.colorBackground);
 
         // Balance the display on the screen
         int width = canvas.getWidth ();
@@ -68,7 +67,7 @@ public class DrawView extends View {
             //Display amount of calories per day
             paint.setTextSize(40);
             paint.setColor(Color.YELLOW);
-            canvas.drawText(""+value,calorieLeft,top + size- calorieHeight,paint);
+            canvas.drawText(""+value,calorieLeft + 5,top + size- calorieHeight -5,paint);
 
             if (value > maxCalorie)
                 paint.setColor(Color.RED);
