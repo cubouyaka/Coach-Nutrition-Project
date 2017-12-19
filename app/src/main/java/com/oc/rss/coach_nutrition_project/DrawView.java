@@ -1,7 +1,6 @@
 package com.oc.rss.coach_nutrition_project;
 
 import android.content.Context;
-import android.content.SharedPreferences;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.DashPathEffect;
@@ -21,7 +20,7 @@ public class DrawView extends View {
     public void onDraw(Canvas canvas) {
 
         int pos = 0;
-        int colorBackground = getResources ().getColor (R.color.colorBackground);
+        //int colorBackground = getResources ().getColor (R.color.colorBackground);
 
         // Balance the display on the screen
         int width = canvas.getWidth ();
@@ -65,6 +64,16 @@ public class DrawView extends View {
 
             int value = calories[calories.length - i - 1];
             int calorieHeight = (int) ((float) value * scale);
+
+            //Display amount of calories per day
+            paint.setTextSize(40);
+            paint.setColor(Color.WHITE);
+            canvas.drawText(""+value,0,top+size,paint);
+
+            //Display amount of calories per day
+            paint.setTextSize(40);
+            paint.setColor(Color.YELLOW);
+            canvas.drawText(""+value,calorieLeft,top + size- calorieHeight,paint);
 
             if (value > maxCalorie)
                 paint.setColor(Color.RED);

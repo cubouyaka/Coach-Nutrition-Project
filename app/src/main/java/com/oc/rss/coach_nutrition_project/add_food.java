@@ -1,11 +1,9 @@
 package com.oc.rss.coach_nutrition_project;
 
 import android.content.ContentValues;
-import android.content.Context;
 import android.content.res.Configuration;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-import android.database.sqlite.SQLiteOpenHelper;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -16,8 +14,6 @@ import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.Toast;
-
-import static android.view.View.INVISIBLE;
 
 public class add_food extends AppCompatActivity {
 

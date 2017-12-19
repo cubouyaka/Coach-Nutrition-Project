@@ -3,7 +3,6 @@ package com.oc.rss.coach_nutrition_project;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.DatePicker;
 
@@ -13,6 +12,7 @@ import java.util.TimeZone;
 public class GetDate extends AppCompatActivity {
 
     private DatePicker datePicker;
+    int SHOW_FOOD_REQUEST = 2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,6 +45,13 @@ public class GetDate extends AppCompatActivity {
         CalorieManager.getInstance (this).setDateIndex (day, month, year);
 
         Intent intent = new Intent (this, show_food_db.class);
-        startActivity (intent);
+        startActivityForResult (intent,SHOW_FOOD_REQUEST);
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data){
+        if (requestCode == SHOW_FOOD_REQUEST)
+            if (resultCode == RESULT_OK)
+                finish();
     }
 }
