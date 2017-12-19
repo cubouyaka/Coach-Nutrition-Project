@@ -79,6 +79,13 @@ public class CalorieManager {
                 (1000 * 60 * 60 * 24));
     }
 
+    // Reset history
+    void resetHistory () {
+
+        for (int i = 0 ; i < calorie.length ; i++)
+            calorie[i] = 0;
+    }
+
     // Load history of calorie
     void loadHistory () {
 

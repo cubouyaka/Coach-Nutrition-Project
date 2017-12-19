@@ -42,6 +42,13 @@ public class AllSettings extends AppCompatActivity {
         startActivity (intent);
     }
 
+    public void onClickDeleteHistory (View v) {
+
+        CalorieManager.getInstance (this).resetHistory ();
+        CalorieManager.getInstance (this).saveHistory ();
+        Toast.makeText(this, "History deleted!", Toast.LENGTH_LONG).show();
+    }
+
     public void onClickDeleteDatabase (View v) {
 
         MySQLiteHelper.getInstance(this).refreshDataBase();
