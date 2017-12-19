@@ -1,44 +1,32 @@
 package com.oc.rss.coach_nutrition_project;
 
+import android.app.Activity;
 import android.app.LoaderManager;
-import android.content.ContentUris;
 import android.content.CursorLoader;
+import android.content.Intent;
 import android.content.Loader;
-import android.content.res.Resources;
 import android.database.Cursor;
-import android.database.sqlite.SQLiteDatabase;
 import android.net.Uri;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
-import android.view.Menu;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.AbsListView;
 import android.widget.EditText;
-import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.SimpleCursorAdapter;
-import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import java.util.ArrayList;
-import java.util.Collections;
-
-public class show_food_db extends AppCompatActivity {
+public class show_food_db extends BaseActivity {
 
     private String authority;
 
-    private Spinner spinner;
-    private SimpleCursorAdapter spinnerAdapter;
     private SimpleCursorAdapter listAdapter;
     private EditText editQuantity;
     private ListView listFood;
     private TextView textCalorie;
-    // private long spinnerID;
-
-    ArrayList<String> arrayList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,6 +43,9 @@ public class show_food_db extends AppCompatActivity {
         // Initialize current calories value
         textCalorie.setText ("" + CalorieManager.getInstance (this).getCurrentCalorieValue ());
 
+        toolbar = (Toolbar)findViewById(R.id.toolBar);
+        setSupportActionBar(toolbar);
+
         editQuantity = (EditText) findViewById (R.id.quantity);
 
         listFood.setChoiceMode (AbsListView.CHOICE_MODE_SINGLE);
@@ -69,9 +60,8 @@ public class show_food_db extends AppCompatActivity {
     }
 
     @Override
-    public boolean onCreateOptionsMenu(Menu menu){
-        getMenuInflater().inflate(R.menu.menu_main, menu);
-        return true;
+    public int getLayoutResource() {
+        return R.layout.activity_show_food_db;
     }
 
     public void addFoodToHistory (View v) {
@@ -95,6 +85,10 @@ public class show_food_db extends AppCompatActivity {
 
             // Initialize current calories value
             textCalorie.setText ("" + CalorieManager.getInstance (this).getCurrentCalorieValue ());
+            Intent returnIntent = new Intent();
+            setResult(Activity.RESULT_OK, returnIntent);
+            Toast.makeText(this, "Meal added !", Toast.LENGTH_LONG).show();
+            finish();
         }
     }
 
