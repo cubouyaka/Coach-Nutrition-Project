@@ -1,17 +1,12 @@
 package com.oc.rss.coach_nutrition_project;
 
-import android.app.Dialog;
 import android.content.ContentResolver;
 import android.content.ContentValues;
-import android.content.DialogInterface;
 import android.content.res.Configuration;
 import android.net.Uri;
 import android.os.Environment;
-import android.support.v4.widget.TextViewCompat;
-import android.support.v7.app.AlertDialog;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -19,12 +14,9 @@ import android.widget.Toast;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
-import java.io.FilenameFilter;
 import java.io.IOException;
 
-import static com.oc.rss.coach_nutrition_project.R.id.text;
-
-public class SearchFile extends AppCompatActivity {
+public class SearchFile extends BaseActivity {
 
     private FileDialog fileDialog;
     private File csvFile;
@@ -41,6 +33,15 @@ public class SearchFile extends AppCompatActivity {
         else //if the screen is not in landscape orientation
             setContentView (R.layout.activity_search_file);
         path = (TextView) findViewById (R.id.pathFile);
+        toolbar = (Toolbar) findViewById (R.id.toolBar);
+        setSupportActionBar(toolbar);
+    }
+
+    @Override
+    public int getLayoutResource() {
+        if(getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE)
+            return R.layout.activity_search_land;
+        return R.layout.activity_search_file;
     }
 
     // Load the csv File in the SQL base
